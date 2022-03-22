@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
+    <h1>Environment: {{ environment }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,7 +37,13 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  data() { 
+    return { 
+        environment: process.env.NODE_ENV, 
+        title: process.env.VUE_APP_TITLE 
+    }
+}
 }
 </script>
 
